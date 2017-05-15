@@ -11,6 +11,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local', {
+    failureFlash: 'Hmmm... some of that information is incorrect. Please try again.',
     successRedirect: '/create',
     failureRedirect: '/auth/login',
 }));
@@ -31,6 +32,7 @@ router.post('/signup', function(req, res, next) {
         if (wasCreated) {
             passport.authenticate('local', {
                 successRedirect: '/profile',
+                failureFlash: 'Hmm... something went wrong. Please try again.',
                 failureRedirect: '/login',
             })(req, res, next)
         } else {

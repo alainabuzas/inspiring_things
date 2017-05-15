@@ -3,6 +3,8 @@ $(document).ready(function() {
 
     $('.modal').modal();
 
+    $('.tooltipped').tooltip({ delay: 50 });
+
     $('#newimage').click(function() {
         console.log('clickity clack');
         $.ajax({

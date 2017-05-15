@@ -15,32 +15,35 @@
             <i class="material-icons">menu</i>
         </a>
         <ul>
-         <li><a class="btn-floating amber lighten-1" id="newimage"><i class="material-icons">photo</i></a></li>
-         <li><a class="btn-floating light-green darken-3" id="newquote"><i class="material-icons">chat</i></a></li>
-         <li><a class="btn-floating light-green" id="fontswap"><i class="material-icons">invert_colors</i></a></li>
-         <li><a class="btn-floating light-green" id="styleswap"><i class="material-icons">text_format</i></a></li>
-         <li><a class="btn-floating deep-orange lighten-2 modal-trigger" href="#modalinstructions"><i class="material-icons">help</i></a></li>
-         <li><a class="btn-floating deep-orange lighten-2" href="/profile" id="goprofile"><i class="material-icons">account_circle</i></a></li>
-         <li><a class="btn-floating deep-orange lighten-2" href="/auth/logout" id="logoutbtn"><i class="material-icons">exit_to_app</i></a></li>
+         <li><a class="btn-floating amber lighten-1 btn tooltipped" data-position="top" data-delay="50" data-tooltip="New Photo" id="newimage"><i class="material-icons">photo</i></a></li>
+         <li><a class="btn-floating light-green darken-3 tooltipped" data-position="top" data-delay="50" data-tooltip="New Quote" id="newquote"><i class="material-icons">chat</i></a></li>
+         <li><a class="btn-floating light-green tooltipped" data-position="top" data-delay="50" data-tooltip="Invert Text" id="fontswap"><i class="material-icons">invert_colors</i></a></li>
+         <li><a class="btn-floating light-green tooltipped" data-position="top" data-delay="50" data-tooltip="Font Style" id="styleswap"><i class="material-icons">text_format</i></a></li>
+         <li><a class="btn-floating deep-orange lighten-2 modal-trigger tooltipped" data-position="top" data-delay="50" data-tooltip="How To" href="#modalinstructions"><i class="material-icons">help</i></a></li>
+         <li><a class="btn-floating deep-orange lighten-2 tooltipped" data-position="top" data-delay="50" data-tooltip="Profile" href="/profile" id="goprofile"><i class="material-icons">account_circle</i></a></li>
+         <li><a class="btn-floating deep-orange lighten-2 tooltipped" data-position="top" data-delay="50" data-tooltip="Log Out" href="/auth/logout" id="logoutbtn"><i class="material-icons">exit_to_app</i></a></li>
         </ul>
      </div>
     <div id="modalinstructions" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <h4>Instructions</h4>
-                <p>Toolbar Key</p>
-                <ul>
+            <h2>Instructions</h2>
+                <h4>Toolbar Key</h4>
+                <ul class="row">
+                <div class="col s12 m6">
                 <li><i class="material-icons">photo</i> Get a new random inspirational photo</li>
                 <li><i class="material-icons">chat</i> Get a new random quote about design</li>
                 <li><i class="material-icons">invert_colors</i> Switch between black and white text</li>
                 <li><i class="material-icons">text_format</i> Switch between serif and sans-serif fonts</li>
-                <li><i class="material-icons">help</i> How to use this thing (You are here!)</li>
+                </div>
+                <div class="col s12 m6">
+                <li><i class="material-icons">help</i> How to use this thing (<a href="/instructions">Full Instructions</a>)</li>
                 <li><i class="material-icons">account_circle</i> Go to your profile page</li>
                 <li><i class="material-icons">exit_to_app</i> Log out of These Inspiring Things</li>
+                </div>
                 </ul>
             </div>
-            <div class="modal-footer">
-            <a href="/instructions">Full Instructions</a></p>
-            <a href="#!" class="modal-action modal-close">Close</a>
+            <div class="modal-footer valign-wrapper">
+            <a href="#!" class="modal-action modal-close btn-flat">Close</a>
             </div>
     </div>
     </div>

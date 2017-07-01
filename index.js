@@ -75,22 +75,37 @@ app.get('/downloadimg', function(req, res) {
             encodeURIComponent($('#qod-quote').text()) + '/' +
             encodeURIComponent($('#bigpicture').attr('src'));
     });
-    screenshot('urltopic', {
-            ignoreSslErrors: true,
-            sslProtocol: any,
-            format: jpg
-        })
-        .width(1200)
-        .height(800)
-        .capture(function(err, img) {
-            if (err) throw err;
-            res.writeHead(200, {
-                'Content-Type': 'image/png'
-            });
-            res.end(img, 'binary');
+    // screenshot('urltopic', {
+    //         ignoreSslErrors: true,
+    //         sslProtocol: any,
+    //         format: jpg
+    //     })
+    //     .width(1200)
+    //     .height(800)
+    //     .capture(function(err, img) {
+    //         if (err) throw err;
+    //         res.writeHead(200, {
+    //             'Content-Type': 'image/png'
+    //         });
+    //         res.end(img, 'binary');
+    //     });
+
+
+    app.get('/save/:quote/:img', function(req, res) {
+        console.log(req.query.img)
+        var decoded = urlencode.decode(req.query.img);
+        console.log(decoded)
+        res.render('save', {
+            quote: req.params.quote,
+            img: req.params.img
         });
+    });
+
 
 });
+
+// google analytics
+
 
 
 // Controllers

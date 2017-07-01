@@ -69,14 +69,5 @@ $(document).ready(function() {
                 encodeURIComponent($('#qod-quote').text()) + '/' +
                 encodeURIComponent($('#bigpicture').attr('src'));
         });
-        app.get('/save/:quote/:img', function(req, res) {
-            console.log(req.query.img)
-            var decoded = urlencode.decode(req.query.img);
-            console.log(decoded)
-            res.render('save', {
-                quote: req.params.quote,
-                img: req.params.img
-            });
-        });
     });
 });

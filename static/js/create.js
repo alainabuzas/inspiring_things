@@ -41,33 +41,38 @@ $(document).ready(function() {
         $('.type a').toggleClass('typeserif a');
     });
 
-    $('#download').click(function() {
-        $.ajax({
-            url: '/downloadimg',
-            type: 'GET',
-            success: function(img) {
-                $(screenshot('/downloadimg', {
-                        ignoreSslErrors: true,
-                        sslProtocol: any,
-                        format: jpg
-                    }))
-                    .width(1200)
-                    .height(800)
-                    .capture(function(err, img) {
-                        if (err) throw err;
-                        res.writeHead(200, {
-                            'Content-Type': 'image/png'
-                        });
-                        res.end(img, 'binary');
-                    });
+    // $('#download').click(function() {
+    //     console.log('tried-dl');
+    //      api.capture('http://api.screenshotlayer.com/api/capture?access_key=THESETHINGS&url=http://www.cnn.com', function(error, response, body) {
+    //         if (err) {
+    //         return console.log('Capture Callback (Error): ' + JSON.stringify(err));
+    //         }
+    //     console.log('Live Capture (Result): ' + result.length);
+    //     });
+    // });
+    //             var downloaded =
+        //         $(screenshot('/downloadimg', {
+        //                 ignoreSslErrors: true,
+        //                 sslProtocol: any,
+        //                 format: jpg
+        //             }))
+        //             .width(1200)
+        //             .height(800)
+        //             .capture(function(err, img) {
+        //                 if (err) throw err;
+        //                 res.writeHead(200, {
+        //                     'Content-Type': 'image/png'
+        //                 });
+        //                 res.end(img, 'binary');
+        //             });
 
-            }
-        });
-        $('#download').click(function() {
-            console.log('download try');
-            window.location.href = '/save/' +
-                encodeURIComponent($('#qod-quote').text()) + '/' +
-                encodeURIComponent($('#bigpicture').attr('src'));
-        });
-    });
+        //     }
+        // });
+        // $('#download').click(function() {
+        //     console.log('download try');
+        //     window.location.href = '/save/' +
+        //         encodeURIComponent($('#qod-quote').text()) + '/' +
+        //         encodeURIComponent($('#bigpicture').attr('src'));
+    //     // });
+    // });
 });

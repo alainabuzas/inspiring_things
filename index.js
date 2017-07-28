@@ -14,6 +14,11 @@ var request = require('request');
 var screenshot = require('url-to-screenshot');
 var urlencode = require('urlencode');
 var fs = require('fs');
+// var API = require('screenshot-capture');
+// var api = new API({
+//     access_key: process.env.ACCESS_KEY,
+//     secret_key: process.env.SECRET_KEY
+// });
 
 // Set and Use Statments
 
@@ -50,7 +55,7 @@ app.get('/instructions', isLoggedIn, function(req, res) {
     res.render('instructions');
 });
 
-app.get('/create', isLoggedIn, function(req, res) {
+app.get('/create', function(req, res) {
     res.render('create');
 })
 
@@ -67,42 +72,43 @@ app.get('/getquote', function(req, res) {
     });
 });
 
-// download button to screenshot route
-app.get('/downloadimg', function(req, res) {
-    var urltopic = ('/save/:quote/:img', function(req, res) {
-        var decoded = urlencode.decode(req.query.img);
-        var combourl = window.location.href = '/save/' +
-            encodeURIComponent($('#qod-quote').text()) + '/' +
-            encodeURIComponent($('#bigpicture').attr('src'));
-    });
-    // screenshot('urltopic', {
-    //         ignoreSslErrors: true,
-    //         sslProtocol: any,
-    //         format: jpg
-    //     })
-    //     .width(1200)
-    //     .height(800)
-    //     .capture(function(err, img) {
-    //         if (err) throw err;
-    //         res.writeHead(200, {
-    //             'Content-Type': 'image/png'
-    //         });
-    //         res.end(img, 'binary');
-    //     });
+
+// // download button to screenshot route
+// app.get('/downloadimg', function(req, res) {
+//     var urltopic = ('/save/:quote/:img', function(req, res) {
+//         var decoded = urlencode.decode(req.query.img);
+//         var combourl = window.location.href = '/save/' +
+//             encodeURIComponent($('#qod-quote').text()) + '/' +
+//             encodeURIComponent($('#bigpicture').attr('src'));
+//     });
+//     screenshot('urltopic', {
+//             ignoreSslErrors: true,
+//             sslProtocol: any,
+//             format: jpg
+//         })
+//         .width(1200)
+//         .height(800)
+//         .capture(function(err, img) {
+//             if (err) throw err;
+//             res.writeHead(200, {
+//                 'Content-Type': 'image/png'
+//             });
+//             res.end(img, 'binary');
+//         });
 
 
-    app.get('/save/:quote/:img', function(req, res) {
-        console.log(req.query.img)
-        var decoded = urlencode.decode(req.query.img);
-        console.log(decoded)
-        res.render('save', {
-            quote: req.params.quote,
-            img: req.params.img
-        });
-    });
+//     app.get('/save/:quote/:img', function(req, res) {
+//         console.log(req.query.img)
+//         var decoded = urlencode.decode(req.query.img);
+//         console.log(decoded)
+//         res.render('save', {
+//             quote: req.params.quote,
+//             img: req.params.img
+//         });
+//     });
 
 
-});
+// });
 
 // google analytics
 

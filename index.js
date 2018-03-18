@@ -51,7 +51,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile');
 });
 
-app.get('/instructions', isLoggedIn, function(req, res) {
+app.get('/instructions', function(req, res) {
     res.render('instructions');
 });
 

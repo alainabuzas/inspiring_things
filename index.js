@@ -13,6 +13,7 @@ var db = require('./models');
 var request = require('request');
 var screenshot = require('url-to-screenshot');
 var urlencode = require('urlencode');
+var favicon = require('express-favicon');
 var fs = require('fs');
 // var API = require('screenshot-capture');
 // var api = new API({
@@ -40,6 +41,7 @@ app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
     next();
 })
+app.use(favicon(__dirname + '/favicon.png'));
 
 // Routes
 
